@@ -121,7 +121,7 @@
     <script>
         // The JavaScript remains unchanged
         async function fetchPipelines() {
-            const response = await fetch("https://2665-2001-559-c0e0-b001-00-42.ngrok-free.app/pipelines");
+            const response = await fetch("https://adec-2001-559-c0e0-b001-00-42.ngrok-free.app/pipelines");
             if (!response.ok) {
                 console.error("Failed to fetch pipelines");
                 return;
@@ -142,7 +142,7 @@
         }
 
         async function fetchPipelineStages(pipelineId) {
-            const response = await fetch(`https://2665-2001-559-c0e0-b001-00-42.ngrok-free.app/pipeline/${pipelineId}/statuses`);
+            const response = await fetch(`https://adec-2001-559-c0e0-b001-00-42.ngrok-free.app/pipeline/${pipelineId}/statuses`);
             if (!response.ok) {
                 console.error(`Failed to fetch statuses for pipeline ${pipelineId}`);
                 return;
@@ -155,7 +155,7 @@
                 const stage = stages[stageId];
                 const p = document.createElement("p");
                 p.innerText = `${stage.name} (ID: ${stage.id})`;
-                stagesDiv.appendChild(p);
+                stagesDivendChild(p);
             }
         }
 
@@ -166,7 +166,7 @@
                 const startDate = moment(dateRange[0], "MM/DD/YYYY").toISOString();
                 const endDate = moment(dateRange[1], "MM/DD/YYYY").toISOString();
 
-                const response = await fetch("https://2665-2001-559-c0e0-b001-00-42.ngrok-free.app/funnel-stats", {
+                const response = await fetch("https://adec-2001-559-c0e0-b001-00-42.ngrok-free.app/funnel-stats", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
